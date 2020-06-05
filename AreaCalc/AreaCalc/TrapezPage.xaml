@@ -19,7 +19,7 @@
                 <Entry x:Name="h_TrapezEntry" Placeholder="Высота (см)" Keyboard="Numeric"/>
             </StackLayout>
             <StackLayout Grid.Row="1">
-                <Button x:Name="CalculateTrapezBtn" Text="Рассчитать"/>
+                <Button x:Name="CalculateTrapezBtn" Text="Рассчитать" Clicked="CalculateTrapezBtn_Click"/>
             </StackLayout>
             <StackLayout Grid.Row="2">
                 <Label x:Name="ErroTrapezLbl" HorizontalOptions="Center" TextColor="#E31616"/>

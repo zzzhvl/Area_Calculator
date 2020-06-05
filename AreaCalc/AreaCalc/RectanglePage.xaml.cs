@@ -20,9 +20,11 @@ namespace AreaCalc
         private void CalculateRectBtn_Click(object sender, EventArgs e)
         {
 
-            if ((String.IsNullOrEmpty(a_RectEntry.Text)) || (String.IsNullOrEmpty(b_RectEntry.Text)))
+            if ((String.IsNullOrEmpty(a_RectEntry.Text)) || (String.IsNullOrEmpty(b_RectEntry.Text)) || (a_RectEntry.Text == ",") || (b_RectEntry.Text == ","))
             {
                 ErrorRectLbl.Text = "Введённые данные должны быть положительными";
+                PerimetrRectLbl.Text = "0";
+                AreaRectLbl.Text = "0";
             }
 
             else
@@ -32,7 +34,7 @@ namespace AreaCalc
              a = float.Parse(a_RectEntry.Text);
              b = float.Parse(b_RectEntry.Text);
 
-                if ((a > 0) || (b > 0) || ((a > 0) & (b > 0)))
+                if ((a > 0) & (b > 0))
                 {
                     Rectangle temp = new Rectangle(a, b);
                     p = temp.Perimetr();
@@ -46,6 +48,8 @@ namespace AreaCalc
                 else
                 {
                     ErrorRectLbl.Text = "Введённые данные должны быть положительными";
+                    PerimetrRectLbl.Text = "0";
+                    AreaRectLbl.Text = "0";
                 }
             }
         }

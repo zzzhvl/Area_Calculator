@@ -20,9 +20,11 @@ namespace AreaCalc
         private void CalculateCircleBtn_Click(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrEmpty(R_CircleEntry.Text))
+            if (String.IsNullOrEmpty(R_CircleEntry.Text) || (R_CircleEntry.Text == ","))
             {
                 ErrorCircleLbl.Text = "Введённые данные должны быть положительными";
+                PerimetrCircleLbl.Text = "0";
+                AreaCircleLbl.Text = "0";
             }
 
             else
@@ -45,6 +47,8 @@ namespace AreaCalc
                 else
                 {
                     ErrorCircleLbl.Text = "Введённые данные должны быть положительными";
+                    PerimetrCircleLbl.Text = "0";
+                    AreaCircleLbl.Text = "0";
                 }
             }
         }
