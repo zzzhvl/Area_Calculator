@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AreaCalc.RectanglePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Vertical" Grid.Row="0">
+                <Entry x:Name="a_RectEntry" Placeholder="Длина (см)" Keyboard="Numeric" IsTextPredictionEnabled="False"/>
+                <Entry x:Name="b_RectEntry" Placeholder="Ширина (см)" Keyboard="Numeric" IsTextPredictionEnabled="False"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1">
+                <Button x:Name="CalculateRectBtn" Text="Рассчитать" Clicked="CalculateRectBtn_Click"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2">
+                <Label x:Name="ErrorRectLbl" HorizontalOptions="Center" TextColor="#E31616"/>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Периметр (см):" FontSize="20"/>
+                    <Label x:Name="PerimetrRectLbl" Text="0" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Площадь (см²):" FontSize="20"/>
+                    <Label x:Name="AreaRectLbl" Text="0" FontSize="20"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
